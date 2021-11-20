@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "projeto-testesenac",
+  "version": "1.0.0",
+  "description": "projeto teste do curso back-end Senac",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kynsh/projeto-testeSenac.git"
+  },
+  "keywords": [
+    "\"API\"",
+    "\"JSON\""
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kynsh/projeto-testeSenac/issues"
+  },
+  "homepage": "https://github.com/kynsh/projeto-testeSenac#readme"
+}

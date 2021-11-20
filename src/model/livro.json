@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "title": "Eu, Robô",
+        "pages": 320,
+        "year": 1950,
+        "author": "Isaac Asimov"
+    },
+    {
+        "id": 2,
+        "title": "Os Irmãos Karamázov",
+        "pages": 911,
+        "year": 1879,
+        "author": "Fiódor Dostoiévski"
+    },
+    {
+        "id": 3,
+        "title": "O Hobbit",
+        "pages": 336,
+        "year": 1937,
+        "author": "J.R.R. Tolkien"
+    },
+    {
+        "id": 4,
+        "title": "1984",
+        "pages": 416,
+        "year": 1949,
+        "author": "George Orwell"
+    },
+    {
+        "id": 5,
+        "title": "A Revolução dos Bichos",
+        "pages": 152,
+        "year": 1945,
+        "author": "George Orwell"
+    },
+    {
+        "id": 6,
+        "title": "O Grande Divórcio",
+        "pages": 160,
+        "year": 1945,
+        "author": "C.S. Lewis"
+    },
+    {
+        "id": 7,
+        "title": "The Death of Ivan Ilyich",
+        "pages": 144,
+        "year": 1886,
+        "author": "Leo Tolstoy"
+    },
+    {
+        "id": 8,
+        "title": "A Cadeira de Prata",
+        "pages": 212,
+        "year": 1953,
+        "author": "C.S. Lewis"
+    },
+    {
+        "id": 9,
+        "title": "Harry Potter e as Relíquias da Morte",
+        "pages": 592,
+        "year": 2007,
+        "author": "J.K. Rowling"
+    },
+    {
+        "id": 10,
+        "title": "Fahrenheit 451",
+        "pages": 216,
+        "year": 1953,
+        "author": "Ray Bradbury"
+    }
+]
