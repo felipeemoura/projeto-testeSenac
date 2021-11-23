@@ -1,10 +1,10 @@
-const livros = require("..model/livro.json");
+const livros = require('../models/livros.json');
 
-  const getAll = (req, res) => {
+  const getAllLivros = (req, res) => {
       console.log(req.url);
-
-      res.send(livros);
-
+      res.status(200).send(livros)
   };
 
-  module.exports = { getAll };
+  module.exports = {
+    getAllLivros,
+  }

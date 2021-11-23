@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 const index = require('./routes/index');
-const livros = require('./require/livrosRoutes');
+const livros = require('./routes/livrosRoutes');
 
-app.use((req, res, next) => {
-    console.log('Nova requisicao realizada');
-
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    )
     next()
 
 })
