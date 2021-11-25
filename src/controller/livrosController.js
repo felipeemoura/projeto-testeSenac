@@ -1,14 +1,10 @@
 const livros = require('../models/livros.json');
 const fs = require("fs");
 
-  const getAllLivros = (req, res) => {
-      console.log(req.url);
-      res.status(200).send(livros);
-  };
-
-  module.exports = {
-
-  }
+const getAllLivros = (req, res) => {
+    console.log(req.url);
+    res.status(200).send(livros);
+}
 
 
 const createLivros = (req, res) => {
@@ -25,7 +21,33 @@ const createLivros = (req, res) => {
     })
 }
 
+
+
+const getLivros = (req, res) => {
+    const livrosId = req.params.id
+    const livrosFound = livros.find((livros) => livros.id == livrosId)
+    if (livrosFound) {
+        res.status(200).send(livrosFound)
+    } else {
+        res.status(404).send({ message: "Livro não encontrado." })
+    }
+}
+
+
+
+const getByTitle = (req, res) => {
+    const livrosTitle = req.params.title;
+    const livrosFound = livros.find((livros) => livros.title == livrosTitle);
+    if (livrosFound) {
+        res.status(200).send(livrosFound)
+    } else {
+        res.status(404).send("Título não encontrado.")
+    }
+}
+
 module.exports = {
+    getByTitle,
+    getLivros,
     createLivros,
     getAllLivros,
 }
