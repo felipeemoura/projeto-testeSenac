@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "Eu, Robô",
+        "read": true,
         "pages": 320,
         "year": 1950,
         "author": "Isaac Asimov"
@@ -9,6 +10,7 @@
     {
         "id": 2,
         "title": "Os Irmãos Karamázov",
+        "read": true,
         "pages": 911,
         "year": 1879,
         "author": "Fiódor Dostoiévski"
@@ -16,6 +18,7 @@
     {
         "id": 3,
         "title": "O Hobbit",
+        "read": true,
         "pages": 336,
         "year": 1937,
         "author": "J.R.R. Tolkien"
@@ -23,6 +26,7 @@
     {
         "id": 4,
         "title": "1984",
+        "read": true,
         "pages": 416,
         "year": 1949,
         "author": "George Orwell"
@@ -30,6 +34,7 @@
     {
         "id": 5,
         "title": "A Revolução dos Bichos",
+        "read": true,
         "pages": 152,
         "year": 1945,
         "author": "George Orwell"
@@ -37,6 +42,7 @@
     {
         "id": 6,
         "title": "O Grande Divórcio",
+        "read": true,
         "pages": 160,
         "year": 1945,
         "author": "C.S. Lewis"
@@ -44,6 +50,7 @@
     {
         "id": 7,
         "title": "The Death of Ivan Ilyich",
+        "read": true,
         "pages": 144,
         "year": 1886,
         "author": "Leo Tolstoy"
@@ -51,6 +58,7 @@
     {
         "id": 8,
         "title": "A Cadeira de Prata",
+        "read": true,
         "pages": 212,
         "year": 1953,
         "author": "C.S. Lewis"
@@ -58,6 +66,7 @@
     {
         "id": 9,
         "title": "Harry Potter e as Relíquias da Morte",
+        "read": true,
         "pages": 592,
         "year": 2007,
         "author": "J.K. Rowling"
@@ -65,6 +74,7 @@
     {
         "id": 10,
         "title": "Fahrenheit 451",
+        "read": true,
         "pages": 216,
         "year": 1953,
         "author": "Ray Bradbury"
@@ -72,36 +82,41 @@
     {
         "id": 11,
         "title": "Terapia de Guerrilha",
-        "pages": 320,
-        "year": 2019,
-        "author": "Italo Marsili"
-    },
-    {
-        "id": 11,
-        "title": "Terapia de Guerrilha",
+        "read": true,
         "pages": 320,
         "year": 2019,
         "author": "Italo Marsili"
     },
     {
         "id": 12,
+        "title": "O Poder do Hábito",
+        "read": true,
+        "pages": 404,
+        "year": 2012,
+        "author": "Charles Duhigg"
+    },
+    {
+        "id": 13,
         "title": "O Fim da Eternidade",
+        "read": false,
         "pages": 256,
         "year": 1955,
         "author": "Isaac Asimov"
     },
     {
-        "id": 13,
+        "id": 14,
         "title": "Lógica de Programação e Algoritmos com JavaScript",
+        "read": false,
         "pages": 320,
         "year": 2018,
         "author": "Edécio Iepsen"
     },
     {
-        "id": 14,
-        "title": "O Óbvio Também Precisa Ser Dito",
-        "pages": 192,
-        "year": 2019,
-        "author": "Guilherme Pintto"
+        "id": 15,
+        "title": "O Senhor dos Anéis",
+        "read": false,
+        "pages": 1568,
+        "year": 1954,
+        "author": "J.R.R. Tolkien"
     }
 ]

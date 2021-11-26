@@ -45,8 +45,37 @@ const getByTitle = (req, res) => {
     }
 }
 
+const updateLivros = (req, res) => {
+    try {
+        const livrosId = req.params.id
+        const livrosToUpdate = req.body //Pego o corpo da requisição com as alterações 
+
+        const livrosFound = livros.find(livros => livros.id == livrosId) // separo o livro que irei atualizar      
+        const livrosIndex = livros.indexOf(livrosFound) // separo o índice do livro no array de filmes
+
+        if (livrosIndex >= 0) { // verifico se o livro existe no array de livros
+            livros.splice(livrosIndex, 1, livrosToUpdate) //busco no array o livro, excluo o registro antigo e substituo pelo novo 
+        } else {
+            res.status(404).send({ message: "Livro não encontrado para ser atualizado" })
+        }
+
+        fs.writeFile("./src/models/livros.json", JSON.stringify(livros), 'utf8', function (err) { // gravo meu json de livros atualizado
+            if (err) {
+                res.status(500).send({ message: err }) // caso dê erro retorno status 500
+            } else {
+                console.log("Arquivo de livros atualizado com sucesso!")
+                const livrosUpdated = livros.find(livros => livros.id == livrosId) // separo o livro que modifiquei no array
+                res.status(200).send(livrosUpdated) // envio o livro modificado como resposta
+            }
+        })
+    } catch (err) {
+        res.status(500).send({ message: err }) // caso dê erro retorno status 500
+    }
+}
+
 module.exports = {
     getByTitle,
+    updateLivros,
     getLivros,
     createLivros,
     getAllLivros,
