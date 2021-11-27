@@ -35,7 +35,7 @@ const getLivros = (req, res) => {
 
 
 
-const getByTitle = (req, res) => {
+/*const getByTitle = (req, res) => {
     const livrosTitle = req.params.title;
     const livrosFound = livros.find((livros) => livros.title == livrosTitle);
     if (livrosFound) {
@@ -43,7 +43,7 @@ const getByTitle = (req, res) => {
     } else {
         res.status(404).send("Título não encontrado.")
     }
-}
+}*/
 
 const updateLivros = (req, res) => {
     try {
@@ -73,10 +73,65 @@ const updateLivros = (req, res) => {
     }
 }
 
+const updateReadStatus = (req, res) => {
+    try {
+        const livrosId = req.params.id
+        const read = req.body.read
+
+        const livrosToUpdate = livros.find(livros => livros.id == livrosId)
+        const livrosIndex = livros.indexOf(livrosToUpdate)
+
+        if (livrosIndex >= 0) {
+            livrosToUpdate.read = read
+            livros.splice(livrosIndex, 1, livrosToUpdate)
+        } else {
+            res.status(404).send({message:"Livro não encontrado para informar se foi assistido ou não"})
+        }
+        fs.writeFile("./src/models/livros.json", JSON.stringify(livros), 'utf8', function (err) {
+            if (err) {
+                res.status(500).send({message: err})
+            } else {
+                console.log("Arquivo atualizado com sucesso!")
+                const livrosUpdated = livros.find((livros) => livros.id == livrosId)
+                res.status(200).send(livrosUpdated)
+            }
+        })
+    } catch (err) {
+        res.status(500).send({message: err})
+    }
+}
+
+const deleteLivros = (req, res) => {
+    try {
+        const livrosId = req.params.id
+        const livrosFound = livros.find(livros => livros.id == livrosId) // encontro o livro pelo id
+        const livrosIndex = livros.indexOf(livrosFound) // identifico o índice do livro no meu array
+
+        if (livrosIndex >= 0) { // verifico se o livro existe no array de filmes
+            livros.splice(livrosIndex, 1) // removo o livro pelo índice
+        } else {
+            res.status(404).send({ message: "Livro não encontrado para ser deletado" })
+        }
+
+        fs.writeFile("./src/models/livros.json", JSON.stringify(livros), 'utf8', function (err) { // gravo meu array de filmes sem o filme que deletei
+            if (err) {
+                res.status(500).send({ message: err })
+            } else {
+                console.log("Livro deletado com sucesso do arquivo!")
+                res.sendStatus(204)
+            }
+        })
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ message: "Erro ao deletar o livro" })
+    }
+}
+
 module.exports = {
-    getByTitle,
-    updateLivros,
-    getLivros,
     createLivros,
+    deleteLivros,
+    updateLivros,
+    updateReadStatus,
+    getLivros,
     getAllLivros,
 }
